@@ -1,0 +1,73 @@
+@import "./_root.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+
+  min-width: 940px;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Cuprum", Arial, sans-serif;
+
+  background-color: white;
+
+  // overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.New {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: -26px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+
+
+  background-color: $basic-red;
+
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  width: 100px;
+  height: 30px;
+}
+
+.none {
+  display: none;
+}

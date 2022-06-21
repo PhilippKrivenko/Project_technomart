@@ -1,0 +1,421 @@
+@import "./_root.scss";
+
+.header {
+  display: grid;
+  gap: 29px;
+
+  background-color: $basic-background;
+
+  padding-bottom: 60px;
+}
+
+.nav-global-wraper {
+  background: $basic-grey;
+}
+
+.nav-global {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 220px;
+  height: 42px;
+
+  img {
+    z-index: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    width: 220px;
+    height: calc(100% + 5px);
+
+    background-color: $basic-red;
+    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+  }
+
+  &:active::before {
+    background-color: $error;
+  }
+}
+
+.form-search {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 12px;
+    left: 17px;
+
+    fill: #ffffff;
+    opacity: 0.3;
+  }
+
+  &:hover &__icon,
+  &:focus &__icon {
+    opacity: 1;
+  }
+
+  &__field {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: inherit;
+
+    height: 42px;
+    width: 270px;
+    padding-left: 42px;
+
+    background: transparent;
+    border: none;
+
+    &::placeholder {
+      color: #ffffff;
+    }
+
+    &:focus {
+      background-color: #ffffff;
+    }
+  }
+
+  &__field:focus + &__icon {
+    fill: $basic-red;
+    opacity: 1;
+  }
+}
+
+.nav-global-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  // &__item {}
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 150px;
+    height: 42px;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    color: white;
+
+    &:active {
+      color: rgba(255, 255, 255, 0.5);
+      background-color: #161d29;
+    }
+  }
+
+  &__link--bookmark::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 16px;
+    background: url("/img/svg/icon-bookmark.svg") no-repeat;
+    opacity: 0.3;
+    margin-right: 8px;
+  }
+
+  &__link--bookmark:hover::before,
+  &__link--cart:hover::before,
+  &__link--bookmark:focus::before,
+  &__link--cart:focus::before {
+    opacity: 1;
+  }
+
+  &__link--bookmark:active::before,
+  &__link--cart:active::before {
+    opacity: 0.3;
+  }
+
+  &__link--cart::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url("/img/svg/icon-cart.svg");
+    opacity: 0.3;
+    margin-right: 8px;
+  }
+
+  &__link--buy {
+    background-color: $basic-green;
+
+    &:hover,
+    &:focus {
+      background-color: $success;
+    }
+
+    &:active {
+      background-color: $basic-green;
+    }
+  }
+}
+
+.header-info {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.site-description {
+  width: 200px;
+  margin: 0;
+  margin-left: 30px;
+  margin-top: 16px;
+  margin-right: 90px;
+
+  color: $basic-red;
+  font-family: "Cuprum";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.header-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  margin-right: 50px;
+
+  &__tel {
+    display: flex;
+
+    width: 270px;
+    height: 45px;
+
+    padding-left: 72px;
+    padding-top: 5px;
+    margin-bottom: 4px;
+
+    border: 3px solid white;
+    background: url("/img/svg/icon-phone.svg") no-repeat 34px 12px;
+
+    font-family: "Cuprum";
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 30px;
+
+    color: $basic-red;
+  }
+
+  &__adress {
+    margin: 0;
+    color: $basic-grey;
+    font-family: "Cuprum";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.nav-user {
+  width: 300px;
+  margin-top: 18px;
+}
+
+.login {
+  display: flex;
+  justify-content: end;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+
+    font-family: "Cuprum";
+    font-size: 21px;
+    line-height: 21px;
+
+    color: #000000;
+    background-color: white;
+    border: none;
+
+    &:hover,
+    &:focus {
+      color: $basic-red;
+    }
+
+    &:active {
+      color: $basic-greylight;
+    }
+  }
+}
+
+.button-login {
+  width: 121px;
+  height: 45px;
+
+  margin-right: 10px;
+
+  &__icon {
+    fill: #c5c5c5;
+
+    margin-left: 14px;
+    margin-right: 6px;
+  }
+
+  &:hover &__icon,
+  &:focus &__icon {
+    fill: $basic-grey;
+  }
+
+  &:active &__icon {
+    fill: #c5c5c5;
+  }
+}
+
+.button-reg {
+  padding-left: 24px;
+
+  width: 150px;
+  height: 45px;
+}
+
+.logout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    width: 300px;
+    height: 45px;
+    padding: 0;
+    margin-bottom: 7px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: "Cuprum";
+    font-size: 21px;
+    line-height: 21px;
+
+    color: #000000;
+    background-color: white;
+    border: none;
+
+    &:active {
+      color: $basic-greylight;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 18px;
+    color: #32425c;
+
+    &:nth-of-type(2) {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin-left: 14px;
+        margin-right: 10px;
+        margin-bottom: 4px;
+
+        background-color: #32425c;
+        border-radius: 50%;
+      }
+
+      &:hover::before,
+      &:focus::before {
+        background-color: $basic-red;
+      }
+
+      &:active::before {
+        background-color: #c5c5c5;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $basic-red;
+    }
+
+    &:active {
+      color: $basic-greylight;
+    }
+  }
+}
+
+.icon-user {
+  fill: #c5c5c5;
+  margin-left: 16px;
+  margin-right: 22px;
+}
+
+.icon-logout {
+  fill: #c5c5c5;
+  margin-left: 20px;
+}
+
+.logout__button:hover .icon-user,
+.logout__button:hover .icon-logout,
+.logout__button:focus .icon-user,
+.logout__button:focus .icon-logout {
+  fill: $basic-grey;
+}
+
+.logout__button:active .icon-user,
+.logout__button:active .icon-logout {
+  fill: $basic-greylight;
+}
+
+.nav-main {
+  background: #32425c;
+  box-shadow: inset 0px -5px 0px #293449;
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    font-size: 18px;
+    line-height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 5px;
+
+    color: white;
+    &:hover,
+    &:focus {
+      background: #293449;
+    }
+    &:active {
+      background: #1d2739;
+    }
+  }
+}

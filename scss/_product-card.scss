@@ -1,0 +1,178 @@
+@import "./_root.scss";
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 220px;
+  min-height: 318px;
+
+  border: 1px solid #eaeaea;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  // &__layers {}
+
+  // &__text {}
+}
+
+.product-layer-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 178px;
+
+  padding: 5px;
+
+  background-color: #ffffff;
+}
+
+.product-layer-buttons {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+
+  height: 178px;
+
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.product-card:hover .product-layer-buttons,
+.product-card:focus .product-layer-buttons {
+  display: flex;
+}
+
+.button-buy-now {
+  display: flex;
+  align-items: center;
+
+  width: 135px;
+  height: 38px;
+
+  background: $basic-green;
+  box-shadow: inset 0px -3px 0px #367315;
+  border-radius: 2px;
+
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+
+  margin-bottom: 10px;
+
+  &:hover,
+  &:focus {
+    background: $success;
+  }
+
+  &:active {
+    background: #518534;
+  }
+
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+
+    background: url("/img/svg/icon-cart.svg") no-repeat;
+
+    margin-left: 30px;
+    margin-right: 8px;
+  }
+}
+
+.button-to-bookmarks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 135px;
+  height: 38px;
+
+  text-transform: uppercase;
+  color: #32425c;
+
+  border: 3px solid #63a63e;
+  border-radius: 2px;
+
+  background: #ffffff;
+
+  &:hover,
+  &:focus {
+    border: 3px solid #32425c;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  padding-top: 0;
+
+  &__title {
+    text-align: center;
+    font-family: "PT Sans";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: #000000;
+
+    transform: rotate(-0.23deg);
+
+    margin-bottom: 7px;
+  }
+
+  &__price {
+    font-family: "PT Sans";
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+
+    margin: 0;
+
+    transform: rotate(-0.23deg);
+  }
+}
+
+.price-past {
+  text-decoration-line: line-through;
+
+  color: #a9a9a9;
+
+  margin-bottom: 14px;
+}
+
+.price-current {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 26px;
+
+  width: 141px;
+  height: 38px;
+
+  padding-left: 32px;
+
+  color: #ffffff;
+
+  background: url("/img/svg/red-button.svg");
+}
